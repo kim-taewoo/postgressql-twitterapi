@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>User profile</title>
+</head>
+
+<body>
+<div class="container mt-3 mb-3">
+    <div>
+        안녕하세요 {{ user.screen_name }} 님 어떤 트윗을 검색할까요?
+    </div>
+    <form class="form-group" action="{{ url_for('search') }}">
+        <label for="q">트위터 검색</label>
+        <input type="text" class="form-control" name="q" id="q" placeholder="Your twitter search">
+        <button type="submit" class="btn btn-primary mt-3 ml-1">Search</button>
+    </form>
+</div>
+</body>
+
+</html>
